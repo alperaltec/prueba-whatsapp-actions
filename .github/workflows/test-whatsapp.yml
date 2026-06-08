@@ -1,0 +1,26 @@
+name: Prueba de Mensaje WhatsApp
+
+on: [push] # Se activará cada vez que guardes un cambio
+
+jobs:
+  test-envio:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar codigo
+        uses: actions/checkout@v4
+
+      - name: Simular una tarea exitosa
+        run: echo "Hola, probando GitHub Actions"
+
+      - name: Enviar Notificacion a mi WhatsApp
+        uses: twilio-labs/actions-sms@v1
+        with:
+          from: 'whatsapp:+14155238886' # El número de Sandbox que te dio Twilio
+          to: 'whatsapp:+593995031599'  # REEMPLAZA CON TU NÚMERO REAL (Mantén el whatsapp:)
+          body: |
+            🚀 *¡Prueba Exitosa desde GitHub Actions!*
+            
+            Hola Alex, el flujo de prueba funcionó correctamente.
+            *Repo:* ${{ github.repository }}
+            *Commit:* ${{ github.event.head_commit.message }}
