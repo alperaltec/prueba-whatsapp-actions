@@ -16,8 +16,8 @@ jobs:
       - name: Enviar Notificacion a mi WhatsApp
         uses: twilio-labs/actions-sms@v1
         with:
-          fromPhoneNumber: 'whatsapp:+14155238886' # El número de Sandbox de Twilio
-          toPhoneNumber: 'whatsapp:+593995031599'   # REEMPLAZA CON TU NÚMERO REAL
+          fromPhoneNumber: 'whatsapp:+14155238886' 
+          toPhoneNumber: 'whatsapp:+593995031599'   
           message: |
             🚀 *¡Prueba Exitosa desde GitHub Actions!*
             
